@@ -16,8 +16,13 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   window.onscroll = () => {
+    const header = document.querySelector("header");
+
     if (window.scrollY > window.innerHeight / 2) {
+      header.style.transform = "translateY(0)";
       console.log("da");
+    } else {
+      header.style.transform = "translateY(-100%)";
     }
   };
 });
