@@ -1,5 +1,8 @@
 window.addEventListener("DOMContentLoaded", () => {
   const aNavLink = document.querySelectorAll(".nav-link");
+  const header = document.querySelector("header");
+  const homeSection = document.querySelector("#home");
+  const sections = document.querySelectorAll("section");
 
   for (let link of aNavLink) {
     link.onclick = (e) => {
@@ -15,11 +18,11 @@ window.addEventListener("DOMContentLoaded", () => {
       return false;
     };
   }
-  const header = document.querySelector("header");
-  const target = document.querySelector("#home");
+  // First IntersectionObserver
+  const height = homeSection.offsetHeight / 2;
 
   const options = {
-    rootMargin: `-${target.offsetHeight / 2}px`,
+    rootMargin: `-${height}px`,
   };
 
   let observer = new IntersectionObserver(function (entries, observer) {
@@ -32,5 +35,23 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }, options);
 
-  observer.observe(target);
+  observer.observe(homeSection);
+
+  window.onscroll = () => {
+    const scrollPosition = window.scrollY + 74;
+
+    sections.forEach((item) => {
+      // console.log(item.offsetTop);
+      if (item.offsetTop <= scrollPosition) {
+        const activeElement = document.querySelectorAll(".nav-link");
+
+        activeElement.forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        let link = document.querySelector(`a[href='#${item.id}']`);
+        link.classList.add("active");
+      }
+    });
+  };
 });
