@@ -57,4 +57,11 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
+
+  btn.onclick = () => {
+    const iframe = document.querySelector(".iframe");
+    iframe.src =
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.0110728054447!2d20.464108815535347!3d44.80096297909864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a700bd270319f%3A0x9c9658c39d9277d!2sBulevar%20oslobo%C4%91enja%2015%2C%20Beograd!5e0!3m2!1sen!2srs!4v1590094052860!5m2!1sen!2srs";
+    console.log(iframe);
+  };
 });
