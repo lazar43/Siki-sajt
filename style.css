@@ -184,7 +184,8 @@ section {
 
 #contact {
   z-index: 1;
-  height: 100vh;
+  height: auto;
+  padding-bottom: 80px;
   background-color: white;
 }
 
@@ -285,6 +286,21 @@ section {
 .container-contact {
   position: relative;
 }
+
+.lokacija {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Oswald;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #242428;
+  font-size: 36px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #46c4d1;
+}
+
 .info {
   position: absolute;
   justify-content: center;
@@ -295,23 +311,67 @@ section {
   top: 80px;
   right: 120px;
 }
+
 .class-container-klinike {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .info-Bulevar {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  
 }
+
+.class-container-klinike h2 {
+  padding: 50px 0 20px 0;
+  font-family: Proxima Nova;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.class-container-klinike .adresa {
+  padding: 0 0 20px 0;
+  font-family: Proxima Nova;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0px;
+  color: #46c4d1;
+  cursor: pointer;
+}
+
+.class-container-klinike .radno-vreme {
+  padding: 20px 0 0 0;
+  font-family: Proxima Nova;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0px;
+  color: #444444;
+}
+
+.class-container-klinike .tel {
+  font-family: Proxima Nova;
+  font-size: 17px;
+  letter-spacing: 0px;
+  color: #444444;
+}
+
+.class-container-klinike p {
+  font-family: Proxima Nova;
+  font-size: 17px;
+  letter-spacing: 0px;
+  color: #444444;
+}
+
 .info-Novi-Beograd {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
 }
+
 .info-New-Now {
   margin: 0;
   padding: 0;
