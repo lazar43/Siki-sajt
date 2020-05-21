@@ -158,7 +158,10 @@ section {
   position: relative;
 }
 
-#about,
+#about {
+  height: auto;
+}
+
 #contact {
   z-index: 1;
   height: 100vh;
