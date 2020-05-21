@@ -82,7 +82,7 @@ section {
   height: 100vh;
 }
 
-#home {
+#video {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -91,14 +91,58 @@ section {
   z-index: -99999999;
 }
 
-#about {
+#home {
   z-index: 999999;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#contact,
-#nesto {
+#div-logo {
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 0 auto 0 auto;
+  padding: 15% 0 0 30%;
+}
+#img-sin {
+  width: 700px;
+}
+#divNav {
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.div-nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  bottom: -10px;
+  height: 3px;
+  background: #46c4d1;
+  transition: all 0.3s;
+}
+.div-nav-link:hover::after {
+  width: 100%;
+}
+.ul-home {
+  list-style-type: none;
+}
+.ul-home > li {
+  float: left;
+  padding: 60px;
+}
+.div-nav-link {
+  color: white;
+  position: relative;
+}
+
+#about,
+#contact {
   z-index: 1;
   height: 100vh;
   background-color: white;
