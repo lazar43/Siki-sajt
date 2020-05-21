@@ -244,3 +244,16 @@ section {
   color: #515256;
   padding: 0 50px 40px 40px;
 }
+.container-contact {
+  position: relative;
+}
+.info {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 420px;
+  height: 423px;
+  top: 80px;
+  right: 120px;
+}
