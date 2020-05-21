@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   const aNavLink = document.querySelectorAll(".nav-link");
+  const divNavLink = document.querySelectorAll(".div-nav-link");
   const header = document.querySelector("header");
   const homeSection = document.querySelector("#home");
   const sections = document.querySelectorAll("section");
@@ -10,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const divPage = document.querySelector(hrefValue);
       const oT = divPage.offsetTop;
       window.scroll({
-        top: oT,
+        top: oT - header.offsetHeight,
         left: 0,
         behavior: "smooth",
       });
@@ -18,31 +19,33 @@ window.addEventListener("DOMContentLoaded", () => {
       return false;
     };
   }
-  // First IntersectionObserver
-  const height = homeSection.offsetHeight / 2;
 
-  const options = {
-    rootMargin: `-${height}px`,
-  };
+  for (let link2 of divNavLink) {
+    link2.onclick = (e) => {
+      const hrefValue = link2.getAttribute("href");
+      const divPage = document.querySelector(hrefValue);
+      const oT = divPage.offsetTop;
+      window.scroll({
+        top: oT - header.offsetHeight,
+        left: 0,
+        behavior: "smooth",
+      });
 
-  let observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        header.style.transform = "translateY(-100%)";
-      } else {
-        header.style.transform = "translateY(0)";
-      }
-    });
-  }, options);
-
-  observer.observe(homeSection);
+      return false;
+    };
+  }
 
   window.onscroll = () => {
-    const scrollPosition = window.scrollY + 74;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition >= homeSection.offsetHeight / 2 - header.offsetHeight) {
+      header.style.transform = "translateY(0)";
+    } else {
+      header.style.transform = "translateY(-100%)";
+    }
 
     sections.forEach((item) => {
-      // console.log(item.offsetTop);
-      if (item.offsetTop <= scrollPosition) {
+      if (item.offsetTop <= scrollPosition + header.offsetHeight) {
         const activeElement = document.querySelectorAll(".nav-link");
 
         activeElement.forEach((item) => {
