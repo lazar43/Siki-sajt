@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   const aNavLink = document.querySelectorAll(".nav-link");
+
   for (let link of aNavLink) {
     link.onclick = (e) => {
       const hrefValue = link.getAttribute("href");
@@ -14,15 +15,22 @@ window.addEventListener("DOMContentLoaded", () => {
       return false;
     };
   }
+  const header = document.querySelector("header");
+  const target = document.querySelector("#home");
 
-  window.onscroll = () => {
-    const header = document.querySelector("header");
-
-    if (window.scrollY > window.innerHeight / 2) {
-      header.style.transform = "translateY(0)";
-      console.log("da");
-    } else {
-      header.style.transform = "translateY(-100%)";
-    }
+  const options = {
+    rootMargin: `-${target.offsetHeight / 2}px`,
   };
+
+  let observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        header.style.transform = "translateY(-100%)";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+    });
+  }, options);
+
+  observer.observe(target);
 });
