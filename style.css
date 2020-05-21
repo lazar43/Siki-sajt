@@ -295,3 +295,25 @@ section {
   top: 80px;
   right: 120px;
 }
+.class-container-klinike {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.info-Bulevar {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  
+}
+.info-Novi-Beograd {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.info-New-Now {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
