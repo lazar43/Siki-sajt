@@ -471,4 +471,8 @@ section {
   .info-New-Now {
     width: 200px;
   }
+
+  .logo {
+    left: 0;
+  }
 }
