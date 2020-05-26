@@ -1,10 +1,13 @@
 window.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector("nav");
   const aNavLink = document.querySelectorAll(".nav-link");
   const divNavLink = document.querySelectorAll(".div-nav-link");
   const header = document.querySelector("header");
   const homeSection = document.querySelector("#home");
   const sections = document.querySelectorAll("section");
   const adrese = document.querySelectorAll(".adresa");
+  const bars = document.querySelector(".bars");
+  const barsIcon = document.querySelector(".fa-bars");
 
   for (let link of aNavLink) {
     link.onclick = (e) => {
@@ -41,6 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (scrollPosition >= homeSection.offsetHeight / 2 - header.offsetHeight) {
       header.style.transform = "translateY(0)";
+      nav.classList.remove("active");
+      barsIcon.classList.remove("fa-times");
     } else {
       header.style.transform = "translateY(-100%)";
     }
@@ -69,4 +74,15 @@ window.addEventListener("DOMContentLoaded", () => {
       };
     }
   });
+
+  bars.onclick = () => {
+    // <i class="fas fa-times"></i>
+    if (nav.classList.contains("active")) {
+      nav.classList.remove("active");
+      barsIcon.classList.remove("fa-times");
+    } else if (!nav.classList.contains("active")) {
+      nav.classList.add("active");
+      barsIcon.classList.add("fa-times");
+    }
+  };
 });
