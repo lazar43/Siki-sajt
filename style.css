@@ -112,7 +112,7 @@ section {
 #home {
   z-index: 999999;
   height: 100vh;
-  background-color: rgba(126, 128, 127, 0.8);
+  background-color: rgba(126, 128, 127, 0.5);
 }
 
 .home-image {
