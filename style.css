@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: Proxima Nova;
-  src: url(/fonts/FontsFree-Net-proxima_nova_reg-webfont.ttf);
+  src: url(fonts/FontsFree-Net-proxima_nova_reg-webfont.ttf);
 }
 
 @font-face {
   font-family: Oswald;
-  src: url(/fonts/Oswald-Regular.ttf);
+  src: url(fonts/Oswald-Regular.ttf);
 }
 
 html {
@@ -112,7 +112,7 @@ section {
 #home {
   z-index: 999999;
   height: 100vh;
-  background-color: rgba(126, 128, 127, 0.5);
+  background-color: rgba(126, 128, 127, 0.7);
 }
 
 .home-image {
@@ -122,6 +122,7 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
+  display: none;
 }
 
 #about {
@@ -148,6 +149,7 @@ section {
 #img-sin {
   width: 100%;
   height: 100%;
+  margin-left: 5px;
 }
 
 #divNav {
@@ -228,7 +230,7 @@ section {
   font-size: 17px;
   color: #515256;
   margin: 0 200px 0 200px;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 .usluge {
@@ -347,10 +349,10 @@ section {
 .class-container-klinike .adresa {
   padding: 0 0 20px 0;
   font-family: Proxima Nova;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   letter-spacing: 0px;
-  color: #46c4d1;
+  color: #17afc0;
   cursor: pointer;
 }
 
@@ -398,7 +400,16 @@ section {
   align-items: center;
   font-size: 35px;
   cursor: pointer;
-  transition: all ease-in-out 0.8s;
+  transition: all ease-in-out 0.5s;
+}
+
+.class-container-klinike .mejl {
+  padding: 20px 0 0 0;
+  font-family: Proxima Nova;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0px;
+  color: #444444;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -418,7 +429,7 @@ section {
 
   .bars {
     display: flex;
-    transition: all ease-in-out 0.8s;
+    transition: all ease-in-out 0.5s;
   }
 
   nav {
@@ -427,12 +438,12 @@ section {
     overflow: hidden;
     position: absolute;
     top: 74px;
-    transition: all ease-in-out 0.8s;
+    transition: all ease-in-out 0.5s;
   }
 
   .active {
     height: 160px;
-    transition: all ease-in-out 0.8s;
+    transition: all ease-in-out 0.5s;
   }
 
   nav ul {
@@ -470,6 +481,10 @@ section {
     display: none;
   }
 
+  .home-image {
+    display: block;
+  }
+
   .class-container-klinike {
     flex-direction: column;
     display: flex;
@@ -498,4 +513,30 @@ section {
   #home {
     background-color: rgba(0, 0, 0, 0.5);
   }
+}
+
+.alldiv {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  font-family: Proxima Nova;
+}
+
+.constiner-footer {
+  height: 32px;
+  line-height: 32px;
+  background-color: #f0f6f8;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.constiner-footer > p {
+  font-family: Proxima Nova;
+  color: black;
+}
+.footer-p > a {
+  text-decoration: none;
+  color: #46c4db;
 }

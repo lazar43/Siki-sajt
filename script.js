@@ -85,4 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
       barsIcon.classList.add("fa-times");
     }
   };
+
+  const godina = document.querySelector("#godina");
+  godina.innerHTML = `${new Date().getFullYear()}`;
 });
